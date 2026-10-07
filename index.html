@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sheridan Telford</title>
+<meta name="description" content="Sheridan Telford is a creative producer who lives and works in New York. She currently works freelance, with experience across luxury fashion, editorial, and fine art production." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&display=swap" rel="stylesheet">
+<style>
+  /* Font note: the original site uses two licensed fonts (Wazlon, Caslon Ionic)
+     that aren't publicly available. Fraunces is substituted here as the closest
+     free equivalent — an editorial serif with true oldstyle-numeral support. */
+
+  #app, body, html, ul {
+    margin: 0; padding: 0; border: 0;
+    max-width: 100%;
+    height: 100%;
+    font-family: "Fraunces", serif !important;
+    letter-spacing: .01em;
+    line-height: 1.3;
+    font-variant-numeric: oldstyle-nums;
+    font-feature-settings: "pnum", "onum";
+  }
+  @media (max-width: 767px) { #app, body, html, ul { font-size: 14px; } }
+  @media (min-width: 768px) and (max-width: 1023px) { #app, body, html, ul { font-size: 16px; } }
+  @media (min-width: 1024px) and (max-width: 1699px) { #app, body, html, ul { font-size: 18px; } }
+  @media (min-width: 1700px) { #app, body, html, ul { font-size: 20px; } }
+
+  li { list-style: none; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .italic { font-style: italic; }
+  .letter-spacing { letter-spacing: .05em; }
+
+  body { background-color: #fff; color: #36f !important; }
+
+  ul {
+    overflow: hidden;
+    perspective: 50vh;
+    list-style: none;
+    white-space: nowrap;
+    height: 100vh;
+    text-align: center;
+  }
+
+  li {
+    color: #36f;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    transform: translateY(100vh);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    letter-spacing: .01em;
+  }
+
+  @media (max-aspect-ratio: 2/3) {
+    li { font-size: 2vh; animation: corkscrew-a 39s linear infinite; }
+  }
+  @media (min-aspect-ratio: 2/3) and (max-aspect-ratio: 1/1) {
+    li { font-size: 2.5vh; animation: corkscrew-b 39s linear infinite; }
+  }
+  @media (min-aspect-ratio: 1/1) and (max-aspect-ratio: 3/2) {
+    li { font-size: 3.5vh; animation: corkscrew-c 39s linear infinite; }
+  }
+  @media (min-aspect-ratio: 3/2) and (max-aspect-ratio: 2/1) {
+    li { font-size: 4vh; animation: corkscrew-d 39s linear infinite; }
+  }
+  @media (min-aspect-ratio: 2/1) {
+    li { font-size: 4.5vh; animation: corkscrew-e 39s linear infinite; }
+  }
+
+  @keyframes corkscrew-a {
+    0% { transform: rotateY(90deg) translateY(110vh) rotate(5deg); }
+    100% { transform: rotateY(-150deg) translateY(-70vh) rotate(5deg); }
+  }
+  @keyframes corkscrew-b {
+    0% { transform: rotateY(90deg) translateY(120vh) rotate(10deg); }
+    100% { transform: rotateY(-180deg) translateY(-100vh) rotate(10deg); }
+  }
+  @keyframes corkscrew-c {
+    0% { transform: rotateY(90deg) translateY(120vh) rotate(10deg); }
+    100% { transform: rotateY(-270deg) translateY(-190vh) rotate(10deg); }
+  }
+  @keyframes corkscrew-d {
+    0% { transform: rotateY(90deg) translateY(120vh) rotate(10deg); }
+    25% { transform: rotateY(-12.5deg) translateY(30vh) rotate(10deg); }
+    50% { transform: rotateY(-115deg) translateY(-60vh) rotate(10deg); }
+    75% { transform: rotateY(-217.5deg) translateY(-150vh) rotate(10deg); }
+    100% { transform: rotateY(-320deg) translateY(-240vh) rotate(10deg); }
+  }
+  @keyframes corkscrew-e {
+    0% { transform: rotateY(90deg) translateY(120vh) rotate(10deg); }
+    100% { transform: rotateY(-390deg) translateY(-290vh) rotate(10deg); }
+  }
+
+  .dragging { animation-play-state: paused; }
+</style>
+</head>
+<body>
+<div class="content">
+<ul id="corkscrew-list">
+</ul>
+</div>
+
+<script>
+  // One 26-line cycle, matching the original's structure and line count exactly.
+  function cycle() {
+    return [
+      '<span class="letter-spacing">SHERIDAN TELFORD</span> is a producer who',
+      'lives and works in New York. Engaged in',
+      'the fields of luxury fashion, editorial, film',
+      'and fine art, her work has driven campaigns',
+      'and productions for brands internationally…',
+      '',
+      '†',
+      '',
+      'Creative Producer, Freelance',
+      '<span class="italic">2022 – Present</span>',
+      '',
+      '<a href="https://www.gerardandkelly.com/" target="_blank" rel="noopener">Studio Manager + Producer, Gerard &amp; Kelly</a>',
+      '<span class="italic">January 2018 – October 2022</span>',
+      '',
+      '<a href="https://www.hodinkee.com/" target="_blank" rel="noopener">Production Coordinator, Hodinkee</a>',
+      '<span class="italic">January 2023 – May 2023</span>',
+      '',
+      '<a href="https://www.performa-arts.org/" target="_blank" rel="noopener">Associate Producer, Performa Biennial</a>',
+      '<span class="italic">2019 – 2021</span>',
+      '',
+      '@',
+      '',
+      '<a href="mailto:sheridan.telford@gmail.com">sheridan.telford@gmail.com</a>',
+      '',
+      '¶',
+      ''
+    ];
+  }
+
+  var lines = [].concat(cycle(), cycle(), cycle());
+  var ul = document.getElementById('corkscrew-list');
+  var frag = document.createDocumentFragment();
+
+  lines.forEach(function (html, i) {
+    var li = document.createElement('li');
+    li.innerHTML = html;
+    li.style.animationDelay = (-21.5 + i * 0.5) + 's';
+    frag.appendChild(li);
+  });
+
+  ul.appendChild(frag);
+</script>
+</body>
+</html>
