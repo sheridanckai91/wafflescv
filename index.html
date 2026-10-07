@@ -108,7 +108,7 @@
 </div>
 
 <script>
-  // One 26-line cycle, matching the original's structure and line count exactly.
+  // One cycle of the CV; it repeats three times to fill the corkscrew.
   function cycle() {
     return [
       '<span class="letter-spacing">SHERIDAN TELFORD</span> is a producer who',
@@ -119,8 +119,14 @@
       '',
       '†',
       '',
+      'Designer, Seaweed',
+      '<span class="italic">2024 – Present</span>',
+      '',
       'Creative Producer, Freelance',
       '<span class="italic">2022 – Present</span>',
+      '',
+      'Production Coordinator + Manager, Freelance',
+      '<span class="italic">2019 – Present</span>',
       '',
       '<a href="https://www.gerardandkelly.com/" target="_blank" rel="noopener">Studio Manager + Producer, Gerard &amp; Kelly</a>',
       '<span class="italic">January 2018 – October 2022</span>',
@@ -148,6 +154,8 @@
     var li = document.createElement('li');
     li.innerHTML = html;
     li.style.animationDelay = (-21.5 + i * 0.5) + 's';
+    // Lines sit 0.5s apart, so the loop must last 0.5s per line to stay seamless.
+    li.style.animationDuration = (lines.length * 0.5) + 's';
     frag.appendChild(li);
   });
 
